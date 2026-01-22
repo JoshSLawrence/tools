@@ -1,9 +1,14 @@
 # Entra App Redirect Fetcher
 
 Fetches all app registrations in a given tenant and their registered redirects
-and outputs the result to a csv next the `script.sh` named `redirects.csv`.
+and outputs the result to a csv next to `script.sh` named `redirects.csv`.
 
 The intent is to use this report to audit redirects and drive clean up.
+
+## Requirements
+
+- [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/?view=azure-cli-latest)
+- The ability to read App Registration manifests from Entra
 
 ## Usage
 
