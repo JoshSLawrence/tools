@@ -18,3 +18,15 @@ cd tools
 chmod +x "microsoft/entra-app-redirect-fetcher"
 ./microsoft/entra-app-redirect-fetcher
 ```
+
+### Supported Flags
+
+- `-t` - Target a specific Entra tenant
+- `-o` - Set the path and file name for the output
+
+E.G.
+
+```bash
+./microsoft/entra-app-redirect-fetcher -t <tenant guid>
+./microsoft/entra-app-redirect-fetcher -o <filename or path/filename>
+```
