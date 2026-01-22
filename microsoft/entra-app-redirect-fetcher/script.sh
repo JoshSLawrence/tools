@@ -7,7 +7,7 @@ WORKING_DIR=$(pwd)
 az account show > /dev/null 2>&1
 
 if [ $? -eq 1 ]; then
-  az login
+  az login --allow-no-subscriptions
 fi
 
 # NOTE: This may take a while to execute as the az cli is not aggresive on
