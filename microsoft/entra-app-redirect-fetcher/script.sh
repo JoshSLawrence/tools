@@ -38,22 +38,24 @@ elif [ $LOGGEDIN -eq 1 ]; then
   az login --allow-no-subscriptions
 fi
 
+TENANT=$(az account show | jq -r ".tenantId")
+
 # NOTE: This may take a while to execute as the az cli is not aggresive on
 # fetching results in tenants with a large app total
-echo "displayName,id,type,redirectUri" > "$OUTFILE"
-az ad app list --all | jq -r '
+echo "displayName,id,type,redirectUri,tenantId" > "$OUTFILE"
+az ad app list --all | jq -r --arg tenant $TENANT '
   .[] |
     (
       .spa.redirectUris[]? as $uri
-        | [.displayName, .id, "spa", $uri]
+        | [.displayName, .id, "spa", $uri, $tenant]
     ),
     (
       .web.redirectUris[]? as $uri
-        | [.displayName, .id, "web", $uri]
+        | [.displayName, .id, "web", $uri, $tenant]
     ),
     (
       .publicClient.redirectUris[]? as $uri
-        | [.displayName, .id, "publicClient", $uri]
+        | [.displayName, .id, "publicClient", $uri, $tenant]
     )
   | @csv
 ' >> "$OUTFILE"
