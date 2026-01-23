@@ -1,0 +1,8 @@
+[
+  {
+    "name": "Entra App Redirect Fetcher",
+    "location": "./microsoft/entra-app-redirect-fetcher/script.sh",
+    "command": "bash",
+    "args": ["-t", "-o"]
+  }
+]
