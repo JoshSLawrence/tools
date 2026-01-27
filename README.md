@@ -21,3 +21,4 @@ chmod +x ./tool_select.sh
 ## All Tools
 
 - [Entra App Redirect Fetcher](./microsoft/entra-app-redirect-fetcher/README.md)
+- [Azure Role Assignment Cleanse](./microsoft/azure-role-assignment-cleanse/README.md)

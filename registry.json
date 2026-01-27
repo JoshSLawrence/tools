@@ -4,5 +4,11 @@
     "location": "./microsoft/entra-app-redirect-fetcher/script.sh",
     "command": "bash",
     "args": ["-t", "-o"]
+  },
+  {
+    "name": "Azure Role Assignment Cleanse",
+    "location": "./microsoft/azure-role-assignment-cleanse/script.sh",
+    "command": "bash",
+    "args": ["--id", "-s", "-r", "-o", "--dry"]
   }
 ]
