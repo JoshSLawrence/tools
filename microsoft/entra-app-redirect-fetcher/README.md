@@ -15,8 +15,8 @@ The intent is to use this report to audit redirects and drive clean up.
 ```bash
 git clone "https://github.com/JoshSLawrence/tools"
 cd tools
-chmod +x "microsoft/entra-app-redirect-fetcher"
-./microsoft/entra-app-redirect-fetcher
+chmod +x "microsoft/entra-app-redirect-fetcher/script.sh"
+./microsoft/entra-app-redirect-fetcher/script.sh
 ```
 
 ### Supported Flags
@@ -27,6 +27,6 @@ chmod +x "microsoft/entra-app-redirect-fetcher"
 E.G.
 
 ```bash
-./microsoft/entra-app-redirect-fetcher -t <tenant guid>
-./microsoft/entra-app-redirect-fetcher -o <filename or path/filename>
+./microsoft/entra-app-redirect-fetcher/script.sh -t <tenant guid>
+./microsoft/entra-app-redirect-fetcher/script.sh -o <filename or path/filename>
 ```
