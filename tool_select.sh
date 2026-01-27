@@ -11,7 +11,7 @@ tool=$(cat $TOOL_REGISTRY | jq ".[].name" | fzf)
 # Determine how to run selected tool
 LOCATION=$(cat $TOOL_REGISTRY | jq -r ".[] | select(.name == $tool) | .location")
 COMMAND=$(cat $TOOL_REGISTRY | jq -r ".[] | select(.name == $tool) | .command")
-ARGS=$(cat $TOOL_REGISTRY | jq -r ".[] | select(.name == $tool) | .args.[]")
+ARGS=$(cat $TOOL_REGISTRY | jq -r ".[] | select(.name == $tool) | .args.[]" 2>/dev/null) || echo "No args to process for this tool"
 
 # If tool takes args, prompt for arg values
 PROCESSED_ARGS=""
